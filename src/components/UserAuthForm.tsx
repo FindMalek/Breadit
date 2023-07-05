@@ -21,10 +21,10 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
             await signIn('google');
         }
         catch (error) {
-            // Toast error
             toast({
                 title: 'There was a problem!',
-                description: 'Please try again later, there was a problem logging in with Google.'
+                description: 'Please try again later, there was a problem logging in with Google.',
+                variant: 'destructive'
             });
 
             console.log(error);
@@ -36,7 +36,7 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
         
     return (
         <div className={cn('flex justify-center', className)} {...props}>
-            <Button onClick={loginWithGoogle} isLoading={isLoading} size='sm' className='w-full'>
+            <Button onClick={ loginWithGoogle } isLoading={ isLoading } size='sm' className='w-full'>
                 { isLoading ? null : <Icons.google className='w-4 h-4 mr-2'/> }
                 Google
             </Button>
