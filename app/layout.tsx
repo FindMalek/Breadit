@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/Toaster'
 
+
 export const metadata = {
     title: 'Breadit',
     description: 'A Reddit clone built with Next.js and TypeScript.',
@@ -15,8 +16,10 @@ const inter = Inter({
 
 export default function RootLayout({
     children,
+    authModal
 }: {
-    children: React.ReactNode
+    children: React.ReactNode,
+    authModal: React.ReactNode
 }) {
     return (
     <html lang='en' className={ cn('bg-white text-slate-900 antialiased light', inter.className) }>
@@ -24,6 +27,8 @@ export default function RootLayout({
       <body className='min-h-screen pt-12 bg-slate-50 antialiased'>
           {/* @ts-expect-error Server Component */}
           <Navbar />
+
+          { authModal }
 
           <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             { children }
