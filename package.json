@@ -51,6 +51,7 @@
     "editorjs-react-renderer": "^3.5.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "input": "^1.0.1",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.221.0",
     "menu": "^0.2.5",
