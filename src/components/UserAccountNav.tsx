@@ -46,16 +46,14 @@ const UserAccountNav: FC<UserAccountNavProps> = ( { user }) => {
                     >
                         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="px-4 py-3">
-                                {
-                                    user.name && 
-                                    <p className='font-medium'>
-                                        {user.name}
-                                    </p>
-                                }
-
-                            </div>
-                            <div className="px-4 py-3">
-                                <p className="text-sm">Signed in as</p>
+                                <p className="text-sm">
+                                    {
+                                        user.name && 
+                                        <p className='font-medium'>
+                                            {user.name}
+                                        </p>
+                                    }
+                                </p>
                                 <p className="truncate text-sm font-medium text-gray-900">
                                     {
                                         user.email && 
@@ -70,11 +68,11 @@ const UserAccountNav: FC<UserAccountNavProps> = ( { user }) => {
                                 <Menu.Item>
                                 {({ active }) => (
                                     <Link
-                                    href="/"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
+                                        href="/"
+                                        className={
+                                            classNames(
+                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm'
+                                            )}
                                     >
                                     Feed
                                     </Link>
@@ -83,11 +81,12 @@ const UserAccountNav: FC<UserAccountNavProps> = ( { user }) => {
                                 <Menu.Item>
                                 {({ active }) => (
                                     <Link
-                                    href="/b/create"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
+                                        href="/b/create"
+                                        className={
+                                            classNames(
+                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm'
+                                            )
+                                        }
                                     >
                                     Create Community
                                     </Link>
@@ -96,11 +95,12 @@ const UserAccountNav: FC<UserAccountNavProps> = ( { user }) => {
                                 <Menu.Item>
                                 {({ active }) => (
                                     <Link
-                                    href="/settings"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
+                                        href="/settings"
+                                        className={
+                                            classNames(
+                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm'
+                                            )
+                                        }
                                     >
                                     Settings
                                     </Link>
@@ -110,12 +110,11 @@ const UserAccountNav: FC<UserAccountNavProps> = ( { user }) => {
                             <DropdownMenuItem
                                 onSelect={(event) => {
                                     event.preventDefault();
-                                    signOut({
-                                        callbackUrl: `${window.location.origin}/sign-in`
-                                    })
+                                    signOut({ callbackUrl: `${window.location.origin}/sign-in` })
                                 }}
-                                className='block w-full px-4 py-2 text-left text-sm cursor-pointer'>
-                                Sign out
+                                className='block w-full px-4 py-2 text-left text-sm cursor-pointer'
+                            >
+                            Sign out
                             </DropdownMenuItem>
                         </Menu.Items>
                     </Transition>
